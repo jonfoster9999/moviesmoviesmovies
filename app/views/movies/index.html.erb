@@ -1,4 +1,11 @@
-<div ng-app="app" ng-controller="moviesCtrl">
-<p>{{thing}}</p>
+<%= stylesheet_link_tag    'movies'%>
+
+<div ng-app="app" ng-controller="moviesCtrl as ctrl">
+<p>{{ctrl.thing}}</p>
+<p ng-repeat="item in ctrl.movies">
+<img ng-src="{{item.image_url}}"><br>
+	{{item.title}}<br>
+	{{item.description}}<br>
+</p>
 
 </div>

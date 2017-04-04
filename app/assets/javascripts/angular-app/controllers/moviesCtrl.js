@@ -1,6 +1,15 @@
-function moviesCtrl($scope){
-	$scope.thing = "Lets see"
+function moviesCtrl($scope, $http){
+	var mv = this
+	this.thing = "Testing"
+	this.movies = []
+	$http.get('/movies.json').then(function(data){
+		// getting movie data here:
+		mv.movies = data.data
+		console.log(data)
+	})
+
 }
+
 
 angular 
 	.module('app')
